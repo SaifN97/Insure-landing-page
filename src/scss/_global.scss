@@ -1,0 +1,169 @@
+:root {
+  --ff-dm-serif: "DM Serif Display", serif; //Headings
+  --ff-karla: "Karla", sans-serif; //Body
+
+  /* small screen font-sizes */
+  --fs-200: 0.75rem;
+  --fs-300: 1rem;
+  --fs-400: 1.25rem;
+  --fs-500: 1.375rem;
+  --fs-600: 1.75rem;
+  --fs-900: 2.125rem;
+
+  --fw-400: 400;
+  --fw-700: 700;
+
+  // ### Primary
+  --clr-primary-100: hsl(216, 30%, 68%);
+  --clr-primary-200: hsl(256, 26%, 20%);
+
+  // ### Neutral
+  --clr-neutral-100: hsl(0, 0%, 98%);
+  --clr-neutral-200: hsl(273, 4%, 51%);
+  --clr-neutral-300: hsl(270, 9%, 17%);
+}
+
+/* reset */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4 {
+  line-height: 1;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+dl,
+dd,
+figure {
+  margin: 0;
+}
+
+ul[class],
+ol[class] {
+  list-style: none;
+  padding: 0;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+body {
+  line-height: 1.3;
+  font-family: var(--ff-karla);
+  font-size: var(--fs-400);
+  font-weight: 300;
+  padding: 1.5rem;
+}
+
+/* typography */
+
+h1,
+h2,
+h3,
+.text-serif {
+  font-family: var(--ff-dm-serif);
+  font-weight: var(--fw-400);
+}
+
+a {
+  font-weight: var(--fw-700);
+  font-size: var(--fs-300);
+  color: var(--clr-neutral-200);
+}
+
+a:hover,
+a:focus {
+  color: var(--clr-neutral-300);
+}
+
+.section-title {
+  font-size: var(--fs-600);
+  color: var(--clr-neutral-400);
+}
+
+.section-subtitle {
+  font-size: var(--fs-600);
+}
+
+.btn {
+  display: inline-block;
+  cursor: pointer;
+  border: 0;
+  background: none;
+  font-weight: var(--fw-700);
+  font-size: var(--fs-300);
+  text-decoration: none;
+  color: var(--clr-neutral-200);
+}
+
+.btn:hover,
+.btn:focus {
+  color: var(--clr-neutral-300);
+}
+
+/* general layout */
+
+section {
+  padding: 2.5rem 0;
+}
+
+@media (min-width: 40em) {
+  section {
+    padding: 3.5rem 0;
+  }
+}
+
+.container {
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+.flow-content > * + * {
+  margin-top: var(--flow-spacer, 1em);
+}
+
+.split {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.split > * {
+  flex-basis: 100%;
+}
+
+@media (min-width: 40em) {
+  .split {
+    flex-direction: row;
+    gap: 2.5rem;
+  }
+}
+
+.xl-space {
+  margin-top: 5rem;
+}
