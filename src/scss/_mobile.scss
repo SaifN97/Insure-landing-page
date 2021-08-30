@@ -7,7 +7,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem;
+  padding: 1.2rem;
   .nav-toggle {
     .close {
       display: none;
@@ -42,8 +42,11 @@
 }
 
 .hero {
-  display: flex;
-  flex-direction: column-reverse;
+  .container {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 0;
+  }
   padding: 0;
 }
 .hero-img {
@@ -55,7 +58,7 @@
   background: url("../images/bg-pattern-intro-left-mobile.svg") no-repeat top
       left,
     url("../images/bg-pattern-intro-right-mobile.svg") no-repeat right 21.5rem;
-  background-color: var(--clr-primary-200);
+
   .btn {
     margin-top: 2em;
   }
@@ -70,18 +73,18 @@
     display: block;
     width: 40%;
     margin: 2.5rem auto;
-    text-align: center;
     border: 1px solid var(--clr-neutral-200);
     opacity: 0.4;
   }
 }
 .card {
-  --flow-spacer: 1.5em;
+  --flow-spacer: 1.35em;
   display: flex;
   flex-direction: column;
   align-items: center;
   p {
     color: var(--clr-neutral-200);
+    line-height: 1.6;
   }
 }
 
@@ -100,10 +103,9 @@
 
 //footer section
 footer {
-  padding: 8rem 0;
+  margin-top: 8rem;
   padding-bottom: 4rem;
-  background: url("../images/bg-pattern-footer-mobile.svg") no-repeat center
-    7.5rem;
+  background: url("../images/bg-pattern-footer-mobile.svg") no-repeat center top;
   background-color: var(--clr-neutral-100);
   .footer-head {
     display: flex;
@@ -111,24 +113,30 @@ footer {
     align-items: center;
     justify-content: center;
     gap: 2rem;
-    padding: 5rem 0 2rem;
-  }
-  a {
-    color: var(--clr-primary-200);
+    padding: 1.5rem 0;
   }
 
   .social {
     display: flex;
     align-items: center;
     gap: 1rem;
+    a:hover {
+      filter: brightness(0) saturate(100%) invert(11%) sepia(15%) saturate(644%)
+        hue-rotate(227deg) brightness(95%) contrast(87%);
+    }
   }
 
   .footer-nav {
     --flow-spacer: 0.6em;
+    position: relative;
+    gap: 0;
     &:before {
       content: "";
       display: block;
-      border: 1px solid var(--clr-neutral-200);
+      position: absolute;
+      width: 100%;
+      top: 0;
+      border-top: 1px solid var(--clr-neutral-200);
       opacity: 0.4;
     }
     dt {
@@ -137,6 +145,15 @@ footer {
       font-weight: var(--fw-700);
       opacity: 0.4;
       margin: 2rem auto;
+    }
+    dd {
+      a {
+        color: var(--clr-primary-200);
+        &:hover {
+          text-decoration: underline;
+          color: var(--clr-primary-200);
+        }
+      }
     }
   }
 }

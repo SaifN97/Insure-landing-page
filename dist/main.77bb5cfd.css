@@ -16,6 +16,12 @@
   --clr-neutral-200: hsl(273, 4%, 51%);
   --clr-neutral-300: hsl(270, 9%, 17%);
 }
+@media (min-width: 50em) {
+  :root {
+    --fs-700: 3.438rem;
+    --fs-900: 4.375rem;
+  }
+}
 
 /* reset */
 *,
@@ -71,6 +77,7 @@ body {
   font-size: var(--fs-400);
   font-weight: 300;
   text-align: center;
+  color: var(--clr-neutral-300);
 }
 
 /* typography */
@@ -113,7 +120,7 @@ a:focus {
   display: inline-block;
   cursor: pointer;
   color: var(--fg, black);
-  border: 2px solid var(--fg, black);
+  border: 3px solid var(--fg, black);
   background: transparent;
   font-weight: var(--fw-700);
   padding: 0.5em 1.5em;
@@ -142,7 +149,7 @@ section {
   padding: 2.5rem 0;
 }
 
-@media (min-width: 40em) {
+@media (min-width: 50em) {
   section {
     padding: 3.5rem 0;
   }
@@ -167,14 +174,14 @@ section {
   flex-basis: 100%;
 }
 
-@media (min-width: 40em) {
+@media (min-width: 50em) {
   .split {
     flex-direction: row;
     gap: 2.5rem;
   }
 }
 .xl-space {
-  margin-top: 5rem;
+  margin-top: 6rem;
 }
 
 .desktop {
@@ -185,7 +192,7 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem;
+  padding: 1.2rem;
 }
 .nav .nav-toggle .close {
   display: none;
@@ -215,6 +222,9 @@ section {
 }
 
 .hero {
+  padding: 0;
+}
+.hero .container {
   display: flex;
   flex-direction: column-reverse;
   padding: 0;
@@ -228,7 +238,6 @@ section {
   padding: 6rem 1.6rem;
   line-height: 1.65;
   background: url("/bg-pattern-intro-left-mobile.7e587940.svg") no-repeat top left, url("/bg-pattern-intro-right-mobile.74cf170a.svg") no-repeat right 21.5rem;
-  background-color: var(--clr-primary-200);
 }
 .hero-text .btn {
   margin-top: 2em;
@@ -243,19 +252,19 @@ section {
   display: block;
   width: 40%;
   margin: 2.5rem auto;
-  text-align: center;
   border: 1px solid var(--clr-neutral-200);
   opacity: 0.4;
 }
 
 .card {
-  --flow-spacer: 1.5em;
+  --flow-spacer: 1.35em;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .card p {
   color: var(--clr-neutral-200);
+  line-height: 1.6;
 }
 
 .cta .cta-content {
@@ -269,9 +278,9 @@ section {
 }
 
 footer {
-  padding: 8rem 0;
+  margin-top: 8rem;
   padding-bottom: 4rem;
-  background: url("/bg-pattern-footer-mobile.8ce622fc.svg") no-repeat center 7.5rem;
+  background: url("/bg-pattern-footer-mobile.8ce622fc.svg") no-repeat center top;
   background-color: var(--clr-neutral-100);
 }
 footer .footer-head {
@@ -280,23 +289,28 @@ footer .footer-head {
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  padding: 5rem 0 2rem;
-}
-footer a {
-  color: var(--clr-primary-200);
+  padding: 1.5rem 0;
 }
 footer .social {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
+footer .social a:hover {
+  filter: brightness(0) saturate(100%) invert(11%) sepia(15%) saturate(644%) hue-rotate(227deg) brightness(95%) contrast(87%);
+}
 footer .footer-nav {
   --flow-spacer: 0.6em;
+  position: relative;
+  gap: 0;
 }
 footer .footer-nav:before {
   content: "";
   display: block;
-  border: 1px solid var(--clr-neutral-200);
+  position: absolute;
+  width: 100%;
+  top: 0;
+  border-top: 1px solid var(--clr-neutral-200);
   opacity: 0.4;
 }
 footer .footer-nav dt {
@@ -305,6 +319,166 @@ footer .footer-nav dt {
   font-weight: var(--fw-700);
   opacity: 0.4;
   margin: 2rem auto;
+}
+footer .footer-nav dd a {
+  color: var(--clr-primary-200);
+}
+footer .footer-nav dd a:hover {
+  text-decoration: underline;
+  color: var(--clr-primary-200);
+}
+
+@media (min-width: 50em) {
+  .mobile,
+.nav-toggle {
+    display: none;
+  }
+
+  .desktop,
+.primary-nav {
+    display: initial;
+  }
+
+  .container {
+    max-width: 72rem;
+  }
+
+  body {
+    text-align: left;
+  }
+
+  .nav .logo {
+    margin-left: 0.5rem;
+  }
+
+  .primary-nav {
+    --flow-spacer: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+  }
+  .primary-nav a {
+    color: var(--fg, var(--clr-neutral-200));
+  }
+  .primary-nav .btn-light {
+    --fg: var(--clr-primary-200);
+    --bg: white;
+  }
+
+  .hero {
+    position: relative;
+    padding: 7.7rem 0;
+  }
+  .hero .container {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("/bg-pattern-intro-right-desktop.4f0db032.svg"), url("/bg-pattern-intro-left-desktop.61d46a7f.svg");
+    background-repeat: no-repeat no-repeat;
+    background-position: right -5rem, left 27rem;
+  }
+
+  .hero-text {
+    --flow-spacer: 1.8em;
+    padding: 0;
+    background: none;
+    max-width: 50%;
+    text-align: center;
+    margin-top: 2.7rem;
+    margin-left: 1.5rem;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-text::before {
+    content: "";
+    border-top: 2px solid var(--clr-neutral-100);
+    display: block;
+    transform: translateY(-4rem);
+    width: 28%;
+    margin: 0 auto;
+  }
+  .hero-text h1 {
+    padding-right: 0.5em;
+    line-height: 0.9;
+  }
+
+  .hero-img {
+    margin: 0;
+  }
+  .hero-img img {
+    display: none;
+    position: absolute;
+    right: 10.5rem;
+    top: 6.5rem;
+  }
+
+  .features {
+    padding: 15.5rem 0 10rem;
+    background: url("/bg-pattern-intro-left-desktop.61d46a7f.svg") no-repeat left -10rem;
+  }
+  .features .section-title::before {
+    margin: 3.7rem 0;
+    width: 14%;
+  }
+
+  .card {
+    align-items: flex-start;
+  }
+
+  .cta .cta-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4.4em 5rem;
+    background-image: url("/bg-pattern-how-we-work-desktop.78c2933f.svg");
+  }
+  .cta .cta-content .cta-title {
+    flex-basis: 52%;
+  }
+  .cta .cta-content .btn {
+    margin: 0;
+  }
+
+  footer {
+    margin-top: 12rem;
+    background: url("/bg-pattern-footer-desktop.7f5faf1c.svg") no-repeat left -2rem;
+  }
+  footer .footer-head {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  footer .footer-head .social {
+    transform: translateX(0.5rem);
+  }
+  footer .footer-nav {
+    padding-top: 1.3rem;
+    gap: 2rem;
+  }
+  footer .footer-nav::before {
+    top: 0.5rem;
+  }
+}
+@media (min-width: 87.5em) {
+  .hero-text {
+    text-align: left;
+    flex-basis: 50%;
+  }
+  .hero-text::before {
+    margin: 0;
+  }
+
+  .hero-img {
+    flex-basis: 50%;
+    flex-shrink: 0;
+  }
+  .hero-img img {
+    display: block;
+  }
 }
 
 /*# sourceMappingURL=/main.77bb5cfd.css.map */
