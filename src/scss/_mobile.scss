@@ -157,4 +157,14 @@ footer {
     }
   }
   box-shadow: inset 10px -5px 20px rgba($color: #000000, $alpha: 0.1);
+
+  .attribution {
+    font-size: var(--fs-200);
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    a {
+      color: var(--clr-primary-200);
+    }
+  }
 }
