@@ -103,8 +103,8 @@
 
 //footer section
 footer {
-  margin-top: 8rem;
-  padding-bottom: 4rem;
+  margin-top: 4rem;
+  padding: 2.5rem;
   background: url("../images/bg-pattern-footer-mobile.svg") no-repeat center top;
   background-color: var(--clr-neutral-100);
   .footer-head {
@@ -113,7 +113,7 @@ footer {
     align-items: center;
     justify-content: center;
     gap: 2rem;
-    padding: 1.5rem 0;
+    padding: 2rem 0;
   }
 
   .social {
@@ -156,4 +156,5 @@ footer {
       }
     }
   }
+  box-shadow: inset 10px -5px 20px rgba($color: #000000, $alpha: 0.1);
 }

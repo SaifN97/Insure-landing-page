@@ -278,10 +278,11 @@ section {
 }
 
 footer {
-  margin-top: 8rem;
-  padding-bottom: 4rem;
+  margin-top: 4rem;
+  padding: 2.5rem;
   background: url("/bg-pattern-footer-mobile.8ce622fc.svg") no-repeat center top;
   background-color: var(--clr-neutral-100);
+  box-shadow: inset 10px -5px 20px rgba(0, 0, 0, 0.1);
 }
 footer .footer-head {
   display: flex;
@@ -289,7 +290,7 @@ footer .footer-head {
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  padding: 1.5rem 0;
+  padding: 2rem 0;
 }
 footer .social {
   display: flex;
@@ -445,8 +446,9 @@ footer .footer-nav dd a:hover {
   }
 
   footer {
-    margin-top: 12rem;
-    background: url("/bg-pattern-footer-desktop.7f5faf1c.svg") no-repeat left -2rem;
+    margin-top: 9rem;
+    padding-bottom: 4rem;
+    background: url("/bg-pattern-footer-desktop.7f5faf1c.svg") no-repeat top left;
   }
   footer .footer-head {
     flex-direction: row;
